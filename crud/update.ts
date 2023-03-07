@@ -1,25 +1,23 @@
 import { prisma } from "../prisma";
 
 async function executePrisma() {
-  const idUser = await prisma.post.findFirst({
+  const idPost = await prisma.post.findFirst({
     select: {
       id: true
     }
   });
 
-  console.log(idUser);
-
-  if (idUser) {
-    const users = await prisma.post.update({
+  if (idPost) {
+    const post = await prisma.post.update({
       where: {
-        id: idUser.id
+        id: idPost.id
       },
       data: {
         title: "Programador Mobile com React Native"
       }
     });
 
-    console.log(users);
+    console.log(post);
   }
 }
 

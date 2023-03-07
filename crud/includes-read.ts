@@ -7,7 +7,7 @@ async function executePrisma() {
     }
   });
 
-  console.dir(usersWithPosts, { depth: null });
+  console.log(usersWithPosts);
 }
 
 executePrisma()

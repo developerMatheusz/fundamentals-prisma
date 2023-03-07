@@ -2,6 +2,8 @@ import { prisma } from "../prisma";
 
 async function executePrisma() {
   const user = await prisma.user.deleteMany();
+
+  console.log(user);
 }
 
 executePrisma()
